@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Historia del FPMR - Frente Patriótico Manuel Rodríguez</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: #0f0f0f;
+      color: #e8e8e8;
+      overflow: hidden;
+      height: 100vh;
+    }
+
+    .presentation {
+      height: 100vh;
+      position: relative;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.6s ease, visibility 0.6s;
+      background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+    }
+
+    .slide.active {
+      opacity: 1;
+      visibility: visible;
+      z-index: 10;
+    }
+
+    .slide-content {
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
+
+    .text-side {
+      flex: 1;
+      padding: 60px 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 55%;
+    }
+
+    .image-side {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #111;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .image-side img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.9;
+    }
+
+    .image-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.85));
+      padding: 30px 20px 20px;
+      font-size: 0.85rem;
+      color: #bbb;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #fff;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      font-size: 1.15rem;
+      color: #c0392b;
+      font-weight: 600;
+      margin-bottom: 28px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: #ccc;
+      margin-bottom: 18px;
+    }
+
+    ul {
+      margin: 15px 0 20px 20px;
+      color: #ccc;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .highlight {
+      color: #e74c3c;
+      font-weight: 600;
+    }
+
+    .nav-dots {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 12px;
+      z-index: 100;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #444;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .dot.active {
+      background: #c0392b;
+      transform: scale(1.3);
+    }
+
+    .nav-arrows {
+      position: fixed;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 25px;
+      z-index: 100;
+      pointer-events: none;
+    }
+
+    .arrow {
+      width: 50px;
+      height: 50px;
+      background: rgba(192, 57, 43, 0.8);
+      border: none;
+      border-radius: 50%;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: auto;
+      transition: background 0.3s;
+    }
+
+    .arrow:hover {
+      background: #e74c3c;
+    }
+
+    .slide-number {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      font-size: 0.95rem;
+      color: #666;
+      letter-spacing: 2px;
+    }
+
+    @media (max-width: 900px) {
+      .slide-content {
+        flex-direction: column;
+      }
+      .text-side, .image-side {
+        max-width: 100%;
+        flex: none;
+      }
+      .text-side {
+        padding: 40px 25px;
+        height: 55%;
+      }
+      .image-side {
+        height: 45%;
+      }
+      h1 { font-size: 1.9rem; }
+      p, ul { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="presentation">
+
+    <!-- SECCIÓN 1: INICIO -->
+    <div class="slide active" id="slide-1">
+      <div class="slide-content">
+        <div class="text-side">
+          <div class="slide-number">01 / 05</div>
+          <div class="subtitle">Orígenes</div>
+          <h1>El inicio del FPMR</h1>
+          <p>
+            El <span class="highlight">Frente Patriótico Manuel Rodríguez</span> nació oficialmente el 
+            <strong>14 de diciembre de 1983</strong> como el brazo armado del Partido Comunista de Chile, 
+            en el marco de la <em>Política de Rebelión Popular de Masas</em>.
+          </p>
+          <p>
+            Su nombre rinde homenaje a <strong>Manuel Rodríguez Erdoíza</strong>, héroe de la Independencia 
+            de Chile. Surgió tras años de formación militar de cuadros en Cuba y Nicaragua, 
+            con el objetivo de derrocar la dictadura de Augusto Pinochet mediante la lucha armada.
+          </p>
+          <p>
+            La primera acción pública fue un <strong>apagón masivo</strong>: la voladura de 12 torres de 
+            alta tensión que dejó a oscuras la zona central del país.
+          </p>
+        </div>
+        <div class="image-side">
+          <img src="images/01-inicio-manuel-rodriguez.jpg" alt="Militantes del FPMR">
+          <div class="image-overlay">Militantes del FPMR con la bandera de la organización y la bandera chilena</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECCIÓN 2: ACCIONES IMPORTANTES -->
+    <div class="slide" id="slide-2">
+      <div class="slide-content">
+        <div class="text-side">
+          <div class="slide-number">02 / 05</div>
+          <div class="subtitle">Acciones de alto impacto</div>
+          <h1>Operaciones destacadas</h1>
+          <p>
+            Entre 1984 y 1986 el FPMR realizó varias de las acciones más ambiciosas 
+            de su historia.
+          </p>
+          <ul>
+            <li>
+              <strong>Toma de Radio Minería</strong> (7 de junio de 1984):  
+              Un comando interrumpió la transmisión de un partido de fútbol y leyó 
+              una proclama en vivo a todo el país.
+            </li>
+            <li>
+              <strong>Operación Carrizal Bajo</strong> (1986):  
+              La mayor internación de armas de la historia reciente de Chile. 
+              Se logró desembarcar gran parte del armamento (M-16, lanzacohetes LAW, 
+              explosivos) antes de que la CNI descubriera el resto.
+            </li>
+            <li>
+              Asaltos a armerías y acciones de propaganda armada de alto impacto mediático.
+            </li>
+          </ul>
+          <p>
+            Las armas de Carrizal Bajo fueron las mismas que se utilizaron en la 
+            Operación Siglo XX.
+          </p>
+        </div>
+        <div class="image-side">
+         <img src="images/02-primeras-acciones-torres.jpg" alt="Armamento de Carrizal Bajo">
+          <div class="image-overlay">Armamento decomisado tras la Operación Carrizal Bajo (1986)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECCIÓN 3: LÍDERES -->
+    <div class="slide" id="slide-3">
+      <div class="slide-content">
+        <div class="text-side">
+          <div class="slide-number">03 / 05</div>
+          <div class="subtitle">Dirección y combatientes</div>
+          <h1>Líderes del Frente</h1>
+          <p>
+            La estructura de mando del FPMR estuvo liderada por un reducido grupo de 
+            comandantes formados en Cuba y con experiencia en Nicaragua:
+          </p>
+          <ul>
+            <li><strong>Raúl Pellegrin</strong> (“Comandante José Miguel”) – principal líder (1983-1988)</li>
+            <li><strong>Cecilia Magni</strong> (“Comandante Tamara”)</li>
+            <li><strong>José Joaquín Valenzuela Levi</strong> (“Comandante Ernesto”) – jefe de la Operación Siglo XX</li>
+            <li><strong>Galvarino Apablaza</strong> (“Comandante Salvador”)</li>
+            <li><strong>Mauricio Hernández Norambuena</strong> (“Comandante Ramiro”)</li>
+          </ul>
+          <p>
+            Muchos cuadros cayeron en la <strong>Operación Albania</strong> (junio de 1987).
+          </p>
+        </div>
+        <div class="image-side">
+          <img src="images/03-lideres-fpmr.jpg" alt="Líderes del FPMR">
+          <div class="image-overlay">Retratos de combatientes del FPMR caídos en la Operación Albania y otras acciones</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECCIÓN 4: OPERACIÓN SIGLO XX -->
+    <div class="slide" id="slide-4">
+      <div class="slide-content">
+        <div class="text-side">
+          <div class="slide-number">04 / 05</div>
+          <div class="subtitle">7 de septiembre de 1986</div>
+          <h1>Operación Siglo XX</h1>
+          <p>
+            La acción más ambiciosa del FPMR: el intento de <span class="highlight">ajusticiamiento 
+            de Augusto Pinochet</span> en el Cajón del Maipo.
+          </p>
+          <p>
+            Un comando de aproximadamente 18 combatientes, liderado por 
+            <strong>José Joaquín Valenzuela Levi</strong> y con apoyo logístico de 
+            <strong>Cecilia Magni</strong>, emboscó la comitiva del dictador.
+          </p>
+          <ul>
+            <li>5 escoltas muertos y 11 heridos</li>
+            <li>Pinochet resultó solo levemente herido</li>
+            <li>Uno de los cohetes impactó el vehículo pero no explotó</li>
+          </ul>
+        </div>
+        <div class="image-side">
+         <img src="images/04-operacion-siglo-xx.jpg" alt="Cajón del Maipo">
+          <div class="image-overlay">Cajón del Maipo – escenario de la emboscada del 7 de septiembre de 1986</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECCIÓN 5: CAÍDA -->
+    <div class="slide" id="slide-5">
+      <div class="slide-content">
+        <div class="text-side">
+          <div class="slide-number">05 / 05</div>
+          <div class="subtitle">1987 – 1999</div>
+          <h1>La caída</h1>
+          <p>
+            Tras el fracaso de la Operación Siglo XX y el decomiso de armas en 
+            <strong>Carrizal Bajo</strong>, el FPMR entró en una fase crítica.
+          </p>
+          <ul>
+            <li><strong>1987</strong>: División con el Partido Comunista. Surge el FPMR Autónomo.</li>
+            <li><strong>Junio 1987</strong>: Operación Albania – 12 frentistas asesinados por la CNI.</li>
+            <li><strong>Octubre 1988</strong>: Muerte de Raúl Pellegrin y Cecilia Magni en Los Queñes.</li>
+            <li>Galvarino Apablaza asume el mando.</li>
+            <li>Hacia finales de los 90 el FPMR abandona progresivamente la lucha armada.</li>
+          </ul>
+        </div>
+        <div class="image-side">
+          <img src="images/05-caida-los-quenes.jpg" alt="Los Queñes">
+          <div class="image-overlay">Zona cordillerana de Los Queñes, donde cayeron Pellegrin y Magni en 1988</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Navegación -->
+  <div class="nav-arrows">
+    <button class="arrow" onclick="changeSlide(-1)">‹</button>
+    <button class="arrow" onclick="changeSlide(1)">›</button>
+  </div>
+
+  <div class="nav-dots">
+    <div class="dot active" onclick="goToSlide(1)"></div>
+    <div class="dot" onclick="goToSlide(2)"></div>
+    <div class="dot" onclick="goToSlide(3)"></div>
+    <div class="dot" onclick="goToSlide(4)"></div>
+    <div class="dot" onclick="goToSlide(5)"></div>
+  </div>
+
+  <script>
+    let currentSlide = 1;
+    const totalSlides = 5;
+
+    function showSlide(n) {
+      document.querySelectorAll('.slide').forEach(slide => slide.classList.remove('active'));
+      document.querySelectorAll('.dot').forEach(dot => dot.classList.remove('active'));
+      
+      currentSlide = n;
+      if (currentSlide > totalSlides) currentSlide = 1;
+      if (currentSlide < 1) currentSlide = totalSlides;
+
+      document.getElementById('slide-' + currentSlide).classList.add('active');
+      document.querySelectorAll('.dot')[currentSlide - 1].classList.add('active');
+    }
+
+    function changeSlide(dir) {
+      showSlide(currentSlide + dir);
+    }
+
+    function goToSlide(n) {
+      showSlide(n);
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ') changeSlide(1);
+      if (e.key === 'ArrowLeft') changeSlide(-1);
+    });
+  </script>
+</body>
+</html>
